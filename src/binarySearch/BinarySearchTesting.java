@@ -17,7 +17,28 @@ class BinarySearchTesting {
 
 	@Test
 	void testHappy() {
-		assertEquals(1, BinarySearch.binarySearch(arr, 2));
+		//test that it finds the right index for all elements in arr
+		for(int i=0; i < arr.length-1; i++) {
+			assertEquals(i, BinarySearch.binarySearch(arr, arr[i]));
+			
+		}
+	}
+	
+	@Test
+	void testNotAnElement() {
+		int[] testArr = {1, 2, 5, 10, 15, 20, 221};
+		
+		assertEquals(-1, BinarySearch.binarySearch(arr, -5));
+		assertEquals(-1, BinarySearch.binarySearch(testArr, 0));
+	}
+	
+	@Test
+	void testEmptyArray() {
+		int[] emptyArr = {};
+		
+		assertEquals(-1, BinarySearch.binarySearch(arr, -5));
+		assertEquals(-1, BinarySearch.binarySearch(arr, 0));
+		
 	}
 
 }
