@@ -6,16 +6,16 @@ public class BinarySearch {
 		int max = array.length - 1;
 		int mid = (max + min) / 2; 
 		
-		while (min!= max) {
+		while (min != max) {
 			mid = (max + min) / 2; 
 			System.out.println(array[mid]);
-			if (array[mid] > target) {
-				min = mid + 1;
-			} else if (array[mid] < target) {
-				max = mid;
+			if (array[mid] == target) {
+				return mid;
 			}
-			else if (min == max) {
-				return -1;
+			if (array[mid] > target) {
+				max = mid ;
+			} else if (array[mid] < target) {
+				min = mid;
 			}
 		}
 		return -1; 
@@ -26,7 +26,7 @@ public class BinarySearch {
 	public static void main(String args[]) {
 		int[] arr = {1, 2, 3, 4, 5, 7};
 		
-		binarySearch(arr, 2);
+		System.out.println(binarySearch(arr, 2));
 	}
 	
 
